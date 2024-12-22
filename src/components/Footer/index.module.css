@@ -1,0 +1,21 @@
+.footerContainer {
+  background-color: #203b5b;
+  height: 220px;
+  width: 100%;
+  margin-top: auto;
+  flex-shrink: 0;
+  & .logo:hover {
+    color: #b2d6ea;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerContainer {
+    height: auto;
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
+  .textAddress {
+    margin-top: 40px;
+  }
+}

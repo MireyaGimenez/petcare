@@ -1,0 +1,71 @@
+.fontFamilyLora {
+  font-family: "Lora";
+}
+
+.fontFamilyPTSerif {
+  font-family: "PT Serif";
+}
+
+.fontFamilyPraise {
+  font-family: "Praise";
+}
+
+.fontSize14 {
+  font-size: 14px;
+}
+
+.fontSize16 {
+  font-size: 16px;
+}
+
+.fontSize18 {
+  font-size: 18px;
+}
+
+.fontSize20 {
+  font-size: 20px;
+}
+
+.fontSize24 {
+  font-size: 24px;
+}
+
+.fontSize28 {
+  font-size: 28px;
+}
+
+.fontSize32 {
+  font-size: 32px;
+}
+
+.fontSize42 {
+  font-size: 42px;
+}
+
+.fontSize48 {
+  font-size: 48px;
+}
+
+.fontSize55 {
+  font-size: 55px;
+}
+
+.fontSize96 {
+  font-size: 96px;
+}
+
+.fontBold {
+  font-weight: bold;
+}
+
+.colorWhite {
+  color: white;
+}
+
+.colorBlue {
+  color: #203b5b;
+}
+
+.colorBlack {
+  color: black;
+}

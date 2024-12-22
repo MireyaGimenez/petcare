@@ -1,0 +1,9 @@
+.socialMediaContainer {
+  width: 150px;
+}
+
+@media (max-width: 768px) {
+  .socialMediaContainer {
+    width: 100px;
+  }
+}

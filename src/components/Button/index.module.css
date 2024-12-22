@@ -1,0 +1,29 @@
+.button {
+  padding: 12px;
+  border-radius: 12px;
+  text-wrap: nowrap;
+  &.main {
+    background-color: #203b5b;
+    color: white;
+  }
+  &.main2 {
+    background-color: #203b5b;
+    color: white;
+
+    &:hover {
+      background-color: #b2d6ea;
+      color: #203b5b;
+    }
+  }
+  &.nav {
+    color: #203b5b;
+    background-color: #b2d6ea;
+    width: 200px;
+    height: 55px;
+    padding: 0;
+  }
+  &:hover {
+    background-color: white;
+    color: #203b5b;
+  }
+}

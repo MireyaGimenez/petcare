@@ -1,0 +1,20 @@
+.petCardContainer {
+  background-color: #b2d6ea;
+  border-radius: 15px;
+  width: 600px;
+  height: 250px;
+  padding: 15px;
+  &:hover {
+    outline: 4px solid #203b5b;
+  }
+  &.selected {
+    outline: 6px solid #203b5b;
+  }
+}
+
+@media (max-width: 768px) {
+  .petCardContainer {
+    width: 380px;
+    height: 210px;
+  }
+}

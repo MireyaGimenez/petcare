@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css?family=Lora");
+@import url("https://fonts.googleapis.com/css?family=Praise");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif");
+
+button {
+  border: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}

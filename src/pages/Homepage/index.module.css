@@ -1,0 +1,26 @@
+.infoWhatContainer {
+  padding: 50px;
+  & .infoWhatText {
+    width: 50%;
+  }
+  & .infoWhatImage {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoWhatContainer {
+    padding: 40px;
+    & .infoWhatText {
+      width: 100%;
+    }
+    & .infoWhatImage {
+      width: 100%;
+    }
+  }
+}
+
+.whyContainer {
+  background-color: #b2d6ea;
+  padding: 50px;
+}

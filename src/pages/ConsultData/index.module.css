@@ -1,0 +1,38 @@
+.petDataContainer {
+  margin: 40px;
+  height: 100%;
+  padding: 25px;
+}
+
+.calendarContainer {
+  padding: 20px 0px;
+  width: 50%;
+}
+
+.infoContainer {
+  padding: 20px;
+  width: 30%;
+  height: 88%;
+  border: 10px solid #203b5b;
+  border-radius: 20px;
+}
+
+.footerButtons {
+  width: 100%;
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .petDataContainer {
+    padding: 10px;
+    margin-bottom: 50px;
+    height: auto;
+  }
+  .calendarContainer {
+    width: 100%;
+  }
+  .infoContainer {
+    width: 86%;
+    border: 7px solid #203b5b;
+  }
+}

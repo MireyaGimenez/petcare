@@ -1,0 +1,26 @@
+.navContainer {
+  width: 100%;
+  height: 120px;
+  background-color: #203b5b;
+  flex-shrink: 0;
+  & .logo:hover {
+    color: #b2d6ea;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    height: 85px;
+  }
+
+  .petsButton,
+  .logInButton,
+  .logOutButton,
+  .registerButton {
+    width: 60px !important;
+    height: 60px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

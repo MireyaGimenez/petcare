@@ -1,0 +1,17 @@
+.infoElementContainer {
+  width: 650px;
+  & .infoImage {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .infoElementContainer {
+    width: 100%;
+    & .infoImage {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
