@@ -102,6 +102,7 @@ const ConsultData = () => {
           direction={isMobile ? "column" : "row"}
           justifyContent={"space-around"}
           gap={isMobile ? 30 : 0}
+          className={styles.calendarAndInfoContainer}
         >
           <div className={styles.calendarContainer}>
             <Calendar onClick={handleCalendarClick} events={petData} />
