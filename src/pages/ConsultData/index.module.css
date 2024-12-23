@@ -4,6 +4,10 @@
   padding: 25px;
 }
 
+.calendarAndInfoContainer {
+  height: 100%;
+}
+
 .calendarContainer {
   padding: 20px 0px;
   width: 50%;
@@ -12,7 +16,6 @@
 .infoContainer {
   padding: 20px;
   width: 30%;
-  height: 88%;
   border: 10px solid #203b5b;
   border-radius: 20px;
 }
