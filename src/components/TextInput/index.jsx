@@ -24,16 +24,18 @@ const TextInput = ({
         {label}
         {required ? "*" : null}
       </label>
-      <input
-        id={id}
-        placeholder={placeholder}
-        className={styles.input}
-        value={value}
-        type={type}
-        onChange={onChange}
-        required={required}
-      />
-      {error ? <Typography>{error}</Typography> : null}
+      <Flex direction={"column"} className={styles.inputContainer} gap={8}>
+        <input
+          id={id}
+          placeholder={placeholder}
+          className={styles.input}
+          value={value}
+          type={type}
+          onChange={onChange}
+          required={required}
+        />
+        {error ? <Typography color={"red"}>{error}</Typography> : null}
+      </Flex>
     </Flex>
   );
 };
