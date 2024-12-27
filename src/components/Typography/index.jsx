@@ -23,6 +23,7 @@ const Typography = ({ children, fontFamily, size, bold, color, className }) => {
         [styles.colorWhite]: color === "white",
         [styles.colorBlue]: color === "blue",
         [styles.colorBlack]: color === "black",
+        [styles.colorRed]: color === "red",
       })}
       as="span"
     >
