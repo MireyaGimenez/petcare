@@ -26,4 +26,12 @@
     background-color: white;
     color: #203b5b;
   }
+  &:disabled {
+    background-color: grey;
+    color: white;
+    &:hover {
+      background-color: grey;
+      color: white;
+    }
+  }
 }

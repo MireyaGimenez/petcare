@@ -53,7 +53,16 @@ const Pets = () => {
           <Button variant={"main2"} onClick={() => navigate("/addPets")}>
             + AFEGIR
           </Button>
-          <Button variant={"main2"} onClick={() => deletePet(cardID)}>
+          {cardID !== undefined ? (
+            <Button variant={"main2"} onClick={() => setCardID(undefined)}>
+              DESSELECCIONAR
+            </Button>
+          ) : null}
+          <Button
+            variant={"main2"}
+            onClick={() => deletePet(cardID)}
+            disabled={cardID === undefined}
+          >
             - ELIMINAR
           </Button>
         </Flex>

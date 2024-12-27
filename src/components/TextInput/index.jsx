@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import Flex from "../Flex";
 import { useState } from "react";
+import Typography from "../Typography";
 
 const TextInput = ({
   label,
@@ -10,6 +11,8 @@ const TextInput = ({
   value,
   onChange,
   position = "vertical",
+  error,
+  required,
 }) => {
   return (
     <Flex
@@ -19,6 +22,7 @@ const TextInput = ({
     >
       <label for={id} className={styles.label}>
         {label}
+        {required ? "*" : null}
       </label>
       <input
         id={id}
@@ -27,7 +31,9 @@ const TextInput = ({
         value={value}
         type={type}
         onChange={onChange}
+        required={required}
       />
+      {error ? <Typography>{error}</Typography> : null}
     </Flex>
   );
 };

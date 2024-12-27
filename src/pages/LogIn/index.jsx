@@ -13,7 +13,7 @@ const LogIn = ({}) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [isSigningIn, setIsSigningIn] = useState(false);
+  const [error, setError] = useState({ email: "", password: "" });
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -24,11 +24,20 @@ const LogIn = ({}) => {
     setPassword(e.target.value);
   };
   const handleSubmit = async () => {
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      await signIn(email, password);
-      navigate("/pets");
-    }
+    await signIn(email, password)
+      .then(() => navigate("/pets"))
+      .catch((error) => {
+        console.log(error);
+        if (error.message.includes("email")) {
+          setError({ email: error.message, password: "" });
+        }
+        if (
+          error.message.includes("password") ||
+          error.message.includes("credential")
+        ) {
+          setError({ email: "", password: error.message });
+        }
+      });
   };
 
   return (
@@ -52,6 +61,7 @@ const LogIn = ({}) => {
             placeholder={"Introdueix el teu email"}
             id={"email"}
             onChange={handleOnChangeEmail}
+            error={error.email}
           />
           <TextInput
             label={"Contrassenya:"}
@@ -59,6 +69,7 @@ const LogIn = ({}) => {
             id={"password"}
             type={"password"}
             onChange={handleOnChangePassword}
+            error={error.password}
           />
           <Button variant={"main"} onClick={handleSubmit}>
             ENTRAR

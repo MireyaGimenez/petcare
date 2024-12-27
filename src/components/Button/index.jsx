@@ -4,7 +4,14 @@ import Typography from "../Typography";
 import Flex from "../Flex";
 import { useMediaQuery } from "react-responsive";
 
-const Button = ({ children, variant, textSize, className, onClick }) => {
+const Button = ({
+  children,
+  variant,
+  textSize,
+  className,
+  onClick,
+  disabled,
+}) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
@@ -14,8 +21,10 @@ const Button = ({ children, variant, textSize, className, onClick }) => {
           [styles.main]: variant === "main",
           [styles.main2]: variant === "main2",
           [styles.nav]: variant === "nav",
+          [styles.disabled]: variant === "disabled",
         })}
         onClick={onClick}
+        disabled={disabled}
       >
         <Typography
           fontFamily={"PT Serif"}
