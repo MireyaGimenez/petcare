@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/petcare/static/css/main.7d51eba2.css",
-    "main.js": "/petcare/static/js/main.c2b7d04f.js",
+    "main.css": "/petcare/static/css/main.c05bdc34.css",
+    "main.js": "/petcare/static/js/main.c8e7bdf6.js",
     "static/js/453.bda46458.chunk.js": "/petcare/static/js/453.bda46458.chunk.js",
     "static/media/banner.png": "/petcare/static/media/banner.7d7be9df997f6e97976b.png",
     "static/media/instagram.png": "/petcare/static/media/instagram.b2276f80b0c0fbb8b8e9.png",
@@ -19,12 +19,12 @@
     "static/media/massa.png": "/petcare/static/media/massa.80e9fb7d503148684a43.png",
     "static/media/bunny.png": "/petcare/static/media/bunny.537fc9ff8fb84223f09f.png",
     "index.html": "/petcare/index.html",
-    "main.7d51eba2.css.map": "/petcare/static/css/main.7d51eba2.css.map",
-    "main.c2b7d04f.js.map": "/petcare/static/js/main.c2b7d04f.js.map",
+    "main.c05bdc34.css.map": "/petcare/static/css/main.c05bdc34.css.map",
+    "main.c8e7bdf6.js.map": "/petcare/static/js/main.c8e7bdf6.js.map",
     "453.bda46458.chunk.js.map": "/petcare/static/js/453.bda46458.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d51eba2.css",
-    "static/js/main.c2b7d04f.js"
+    "static/css/main.c05bdc34.css",
+    "static/js/main.c8e7bdf6.js"
   ]
 }
