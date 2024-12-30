@@ -102,6 +102,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "cat"}
               value={"cat"}
+              imageName={"cat"}
             />
             <Radius
               id={"dog"}
@@ -109,6 +110,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "dog"}
               value={"dog"}
+              imageName={"dog"}
             />
             <Radius
               id={"bunny"}
@@ -116,6 +118,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "bunny"}
               value={"bunny"}
+              imageName={"bunny"}
             />
             <Radius
               id={"rat"}
@@ -123,6 +126,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "rat"}
               value={"rat"}
+              imageName={"rat"}
             />
           </Flex>
           <Button variant={"main"} onClick={handleSubmit}>

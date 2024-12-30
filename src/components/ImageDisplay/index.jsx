@@ -11,6 +11,7 @@ const ImageDisplay = ({ imageName, type }) => {
         [styles.info]: type === "info",
         [styles.socialMedia]: type === "socialMedia",
         [styles.species]: type === "species",
+        [styles.speciesCard]: type === "speciesCard",
         [styles.contact]: type === "contact",
       })}
     >

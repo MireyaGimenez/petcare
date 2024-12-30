@@ -20,6 +20,13 @@
   border-radius: 20px;
 }
 
+.detailInfo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 40px;
+  padding: 0px 20px;
+}
+
 .footerButtons {
   width: 100%;
   margin-top: auto;
