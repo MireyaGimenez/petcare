@@ -112,9 +112,10 @@ const PetData = ({}) => {
                 id={"foodNormal"}
                 name={"food"}
                 onChange={handleFoodChange}
-                checked={food === "normalFood"}
-                value={"normalFood"}
-                label
+                checked={food === "normal"}
+                value={"normal"}
+                label={"Normal"}
+                imageName={"normalFood"}
               />
               <Radius
                 id={"foodMassa"}
@@ -122,7 +123,8 @@ const PetData = ({}) => {
                 onChange={handleFoodChange}
                 checked={food === "massa"}
                 value={"massa"}
-                label
+                label={"Massa"}
+                imageName={"massa"}
               />
               <Radius
                 id={"foodPoc"}
@@ -130,15 +132,17 @@ const PetData = ({}) => {
                 onChange={handleFoodChange}
                 checked={food === "poc"}
                 value={"poc"}
-                label
+                label={"Poc"}
+                imageName={"poc"}
               />
               <Radius
                 id={"foodRes"}
                 name={"food"}
                 onChange={handleFoodChange}
-                checked={food === "resFood"}
-                value={"resFood"}
-                label
+                checked={food === "res"}
+                value={"res"}
+                label={"Res"}
+                imageName={"resFood"}
               />
             </Flex>
           </Flex>
@@ -153,9 +157,10 @@ const PetData = ({}) => {
                 id={"poopNormal"}
                 name={"poop"}
                 onChange={handlePoopChange}
-                checked={poop === "normalPoop"}
-                value={"normalPoop"}
-                label
+                checked={poop === "normal"}
+                value={"normal"}
+                label={"Normal"}
+                imageName={"normalPoop"}
               />
               <Radius
                 id={"poopDurs"}
@@ -163,7 +168,8 @@ const PetData = ({}) => {
                 onChange={handlePoopChange}
                 checked={poop === "durs"}
                 value={"durs"}
-                label
+                label={"Durs"}
+                imageName={"durs"}
               />
               <Radius
                 id={"poopSolts"}
@@ -171,7 +177,8 @@ const PetData = ({}) => {
                 onChange={handlePoopChange}
                 checked={poop === "solts"}
                 value={"solts"}
-                label
+                label={"Solts"}
+                imageName={"solts"}
               />
               <Radius
                 id={"poopDiarrea"}
@@ -179,15 +186,17 @@ const PetData = ({}) => {
                 onChange={handlePoopChange}
                 checked={poop === "diarrea"}
                 value={"diarrea"}
-                label
+                label={"Diarrea"}
+                imageName={"diarrea"}
               />
               <Radius
                 id={"poopRes"}
                 name={"poop"}
                 onChange={handlePoopChange}
-                checked={poop === "resPoop"}
-                value={"resPoop"}
-                label
+                checked={poop === "res"}
+                value={"res"}
+                label={"Res"}
+                imageName={"resPoop"}
               />
             </Flex>
           </Flex>
@@ -203,8 +212,9 @@ const PetData = ({}) => {
                 name={"behavior"}
                 onChange={handleBehaviorChange}
                 checked={behavior === "normal"}
-                value={"normalBehavior"}
-                label
+                value={"normal"}
+                label={"Normal"}
+                imageName={"normalBehavior"}
               />
               <Radius
                 id={"behaviorJuganer"}
@@ -212,7 +222,8 @@ const PetData = ({}) => {
                 onChange={handleBehaviorChange}
                 checked={behavior === "juganer"}
                 value={"juganer"}
-                label
+                label={"Juganer"}
+                imageName={"juganer"}
               />
               <Radius
                 id={"behaviorAgressiu"}
@@ -220,7 +231,8 @@ const PetData = ({}) => {
                 onChange={handleBehaviorChange}
                 checked={behavior === "agressiu"}
                 value={"agressiu"}
-                label
+                label={"Agressiu"}
+                imageName={"agressiu"}
               />
               <Radius
                 id={"behaviorAnsios"}
@@ -228,7 +240,8 @@ const PetData = ({}) => {
                 onChange={handleBehaviorChange}
                 checked={behavior === "ansios"}
                 value={"ansios"}
-                label
+                label={"Ansiós"}
+                imageName={"ansios"}
               />
               <Radius
                 id={"behaviorLetargic"}
@@ -236,7 +249,8 @@ const PetData = ({}) => {
                 onChange={handleBehaviorChange}
                 checked={behavior === "letargic"}
                 value={"letargic"}
-                label
+                label={"Letàrgic"}
+                imageName={"letargic"}
               />
             </Flex>
           </Flex>
@@ -255,7 +269,17 @@ const PetData = ({}) => {
               onChange={handlePukeChange}
               checked={puke}
               value={true}
-              label
+              label={"Sí"}
+              imageName={"puke"}
+            />
+            <Radius
+              id={"pukeNo"}
+              name={"puke"}
+              onChange={handlePukeChange}
+              checked={!puke}
+              value={false}
+              label={"No"}
+              imageName={"resPoop"}
             />
           </Flex>
 

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import ImageDisplay from "../ImageDisplay";
 import Typography from "../Typography";
 
-const Radius = ({ id, name, value, onChange, checked, label }) => {
+const Radius = ({ id, name, value, onChange, checked, label, imageName }) => {
   const [radiusChecked, setChecked] = useState(checked);
 
   const handleClick = () => {
@@ -23,11 +23,11 @@ const Radius = ({ id, name, value, onChange, checked, label }) => {
           })}
           onClick={handleClick}
         >
-          <ImageDisplay imageName={value} type={"species"} />
+          <ImageDisplay imageName={imageName} type={"species"} />
         </div>
         {label ? (
           <label htmlFor={name}>
-            <Typography fontFamily={"Lora"}>{value}</Typography>
+            <Typography fontFamily={"Lora"}>{label}</Typography>
           </label>
         ) : null}
       </Flex>

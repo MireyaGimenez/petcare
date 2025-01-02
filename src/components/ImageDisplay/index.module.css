@@ -18,6 +18,9 @@
   &.species {
     object-fit: contain;
   }
+  &.speciesCard {
+    width: 250px;
+  }
   &.contact {
     width: 85px;
     height: 80px;
