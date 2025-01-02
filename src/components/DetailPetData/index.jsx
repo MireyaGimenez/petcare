@@ -9,7 +9,7 @@ const DetailPetData = ({ name, imageName }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
   return (
-    <Flex direction={"column"} gap={10}>
+    <Flex direction={"column"} gap={10} alignItems={"center"}>
       <div className={clsx(styles.detailImage)}>
         <ImageDisplay imageName={imageName} type={"species"} />
       </div>

@@ -20,6 +20,12 @@
   border-radius: 20px;
 }
 
+.extraInfo {
+  background-color: rgb(178, 214, 234, 0.6);
+  padding: 10px 0px;
+  border-radius: 10px;
+}
+
 .detailInfo {
   display: grid;
   grid-template-columns: 1fr 1fr;

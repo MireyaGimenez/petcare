@@ -117,25 +117,37 @@ const ConsultData = () => {
           <div className={styles.calendarContainer}>
             <Calendar onClick={handleCalendarClick} events={petData} />
           </div>
-          <Flex className={styles.infoContainer} direction={"column"} gap={30}>
+          <Flex className={styles.infoContainer} direction={"column"} gap={20}>
             <Select
               options={petOptions}
               onChange={handleSelectPet}
               value={petOption}
             />
-            <Flex justifyContent={"space-around"}>
-              <Typography size={20}>
-                Edat: {pet !== undefined ? pet.age : null}
-              </Typography>
-              <Typography size={20}>
-                Gènere: {pet !== undefined ? pet.sex : null}
-              </Typography>
+            <Flex justifyContent={"space-around"} className={styles.extraInfo}>
+              <Flex gap={15} alignItems={"center"}>
+                <Typography size={16} fontFamily={"Lora"} bold>
+                  Edat
+                </Typography>
+                <Typography size={18} fontFamily={"Lora"}>
+                  {pet !== undefined ? pet.age : null}
+                </Typography>
+              </Flex>
+              <Flex gap={15} alignItems={"center"}>
+                <Typography size={16} fontFamily={"Lora"} bold>
+                  Gènere
+                </Typography>
+                <Typography size={18} fontFamily={"Lora"}>
+                  {pet !== undefined ? pet.sex : null}
+                </Typography>
+              </Flex>
             </Flex>
             {selectedDateData !== undefined ? (
               <div className={styles.detailInfo}>
                 {selectedDateData.food ? (
-                  <Flex direction={"column"} gap={10}>
-                    <Typography size={20}>Aliment</Typography>
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Aliment
+                    </Typography>
                     <DetailPetData
                       name={selectedDateData.food}
                       imageName={
@@ -148,8 +160,10 @@ const ConsultData = () => {
                   </Flex>
                 ) : null}
                 {selectedDateData.poop ? (
-                  <Flex direction={"column"} gap={10}>
-                    <Typography size={20}>Excrements</Typography>
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Excrements
+                    </Typography>
                     <DetailPetData
                       name={selectedDateData.poop}
                       imageName={
@@ -163,8 +177,10 @@ const ConsultData = () => {
                 ) : null}
 
                 {selectedDateData.behavior ? (
-                  <Flex direction={"column"} gap={10}>
-                    <Typography size={20}>Behavior</Typography>
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Behavior
+                    </Typography>
                     <DetailPetData
                       name={selectedDateData.behavior}
                       imageName={
@@ -176,10 +192,12 @@ const ConsultData = () => {
                   </Flex>
                 ) : null}
 
-                <Flex direction={"column"} gap={10}>
-                  <Typography size={20}>Vòmits</Typography>
+                <Flex direction={"column"} gap={10} alignItems={"center"}>
+                  <Typography fontFamily={"Lora"} size={20} bold>
+                    Vòmits
+                  </Typography>
                   <DetailPetData
-                    name={selectedDateData.puke}
+                    name={selectedDateData.puke === true ? "Sí" : "No"}
                     imageName={
                       selectedDateData.puke === false ? "resPoop" : "puke"
                     }
