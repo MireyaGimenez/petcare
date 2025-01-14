@@ -30,6 +30,8 @@ import ansios from "./ansios.png";
 import diarrea from "./diarrea.png";
 import durs from "./durs.png";
 import juganer from "./juganer.png";
+import logOut from "./logOut.png";
+import register from "./register.png";
 
 export default {
   banner,
@@ -64,4 +66,6 @@ export default {
   diarrea,
   durs,
   juganer,
+  logOut,
+  register,
 };

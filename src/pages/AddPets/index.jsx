@@ -92,42 +92,44 @@ const AddPets = ({}) => {
               onChange={(e) => setSex(e.target.value)}
             />
           </Flex>
-          <Flex gap={30}>
+          <Flex gap={30} direction={isMobile ? "column" : "row"}>
             <Typography fontFamily={"Lora"} size={isMobile ? 24 : 32} bold>
               Espècie
             </Typography>
-            <Radius
-              id={"cat"}
-              name={"species"}
-              onChange={handleChange}
-              checked={selectedValue === "cat"}
-              value={"cat"}
-              imageName={"cat"}
-            />
-            <Radius
-              id={"dog"}
-              name={"species"}
-              onChange={handleChange}
-              checked={selectedValue === "dog"}
-              value={"dog"}
-              imageName={"dog"}
-            />
-            <Radius
-              id={"bunny"}
-              name={"species"}
-              onChange={handleChange}
-              checked={selectedValue === "bunny"}
-              value={"bunny"}
-              imageName={"bunny"}
-            />
-            <Radius
-              id={"rat"}
-              name={"species"}
-              onChange={handleChange}
-              checked={selectedValue === "rat"}
-              value={"rat"}
-              imageName={"rat"}
-            />
+            <Flex gap={30} className={styles.speciesContainer}>
+              <Radius
+                id={"cat"}
+                name={"species"}
+                onChange={handleChange}
+                checked={selectedValue === "cat"}
+                value={"cat"}
+                imageName={"cat"}
+              />
+              <Radius
+                id={"dog"}
+                name={"species"}
+                onChange={handleChange}
+                checked={selectedValue === "dog"}
+                value={"dog"}
+                imageName={"dog"}
+              />
+              <Radius
+                id={"bunny"}
+                name={"species"}
+                onChange={handleChange}
+                checked={selectedValue === "bunny"}
+                value={"bunny"}
+                imageName={"bunny"}
+              />
+              <Radius
+                id={"rat"}
+                name={"species"}
+                onChange={handleChange}
+                checked={selectedValue === "rat"}
+                value={"rat"}
+                imageName={"rat"}
+              />
+            </Flex>
           </Flex>
           <Button variant={"main"} onClick={handleSubmit}>
             AFEGIR MASCOTA

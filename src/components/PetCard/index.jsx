@@ -34,17 +34,17 @@ const PetCard = ({
         <Flex>
           <ImageDisplay imageName={image} type={"speciesCard"} />
         </Flex>
-        <Flex direction={"column"} gap={isMobile ? 15 : 20}>
-          <Typography size={isMobile ? 24 : 28} fontFamily={"Lora"} bold>
+        <Flex direction={"column"} gap={isMobile ? 10 : 20}>
+          <Typography size={isMobile ? 20 : 28} fontFamily={"Lora"} bold>
             {petName}
           </Typography>
-          <Typography size={isMobile ? 24 : 28} fontFamily={"Lora"}>
+          <Typography size={isMobile ? 20 : 28} fontFamily={"Lora"}>
             {petBreed}
           </Typography>
-          <Typography size={isMobile ? 24 : 28} fontFamily={"Lora"}>
+          <Typography size={isMobile ? 20 : 28} fontFamily={"Lora"}>
             {petAge}
           </Typography>
-          <Flex gap={20}>
+          <Flex gap={isMobile ? 10 : 20}>
             <Button
               variant={"main"}
               textSize={"card"}

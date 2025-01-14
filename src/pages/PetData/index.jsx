@@ -263,24 +263,26 @@ const PetData = ({}) => {
             <Typography fontFamily={"Lora"} size={isMobile ? 24 : 32} bold>
               Vòmits
             </Typography>
-            <Radius
-              id={"pukeYes"}
-              name={"puke"}
-              onChange={handlePukeChange}
-              checked={puke}
-              value={true}
-              label={"Sí"}
-              imageName={"puke"}
-            />
-            <Radius
-              id={"pukeNo"}
-              name={"puke"}
-              onChange={handlePukeChange}
-              checked={!puke}
-              value={false}
-              label={"No"}
-              imageName={"resPoop"}
-            />
+            <Flex direction={"row"} gap={30}>
+              <Radius
+                id={"pukeYes"}
+                name={"puke"}
+                onChange={handlePukeChange}
+                checked={puke}
+                value={true}
+                label={"Sí"}
+                imageName={"puke"}
+              />
+              <Radius
+                id={"pukeNo"}
+                name={"puke"}
+                onChange={handlePukeChange}
+                checked={!puke}
+                value={false}
+                label={"No"}
+                imageName={"resPoop"}
+              />
+            </Flex>
           </Flex>
 
           <Flex>

@@ -35,8 +35,12 @@
 @media (max-width: 768px) {
   .imgContainer {
     &.species {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
+    }
+    &.speciesCard {
+      width: 100px;
+      height: 100px;
     }
   }
 }
