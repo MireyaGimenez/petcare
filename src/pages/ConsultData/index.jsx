@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import Typography from "../../components/Typography";
 import Button from "../../components/Button";
 import Flex from "../../components/Flex";
+import DetailPetData from "../../components/DetailPetData";
 import { deleteDataByDate, getPetById, getPets } from "../../firebase/petsCRUD";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState, useCallback } from "react";
@@ -31,7 +32,7 @@ const ConsultData = () => {
 
   useEffect(() => {
     setSelectedDateData(sameDayData);
-  }, [sameDayData]);
+  }, []);
 
   useEffect(() => {
     if (state) {
@@ -45,6 +46,18 @@ const ConsultData = () => {
         });
     }
   }, [state]);
+
+  //
+  useEffect(() => {
+    if (pet) {
+      getPetById(pet.id)
+        .then((pet) => setPet(pet))
+        .catch((error) => {
+          console.error("Error fetching pet information:", error);
+        });
+    }
+  }, [selectedDateData]);
+  //
 
   useEffect(() => {
     getPets()
@@ -95,9 +108,6 @@ const ConsultData = () => {
         direction={"column"}
         gap={isMobile ? 20 : 40}
       >
-        <Typography fontFamily={"PT Serif"} size={isMobile ? 32 : 48} bold>
-          Pet Data
-        </Typography>
         <Flex
           direction={isMobile ? "column" : "row"}
           justifyContent={"space-around"}
@@ -107,35 +117,93 @@ const ConsultData = () => {
           <div className={styles.calendarContainer}>
             <Calendar onClick={handleCalendarClick} events={petData} />
           </div>
-          <Flex className={styles.infoContainer} direction={"column"} gap={30}>
+          <Flex className={styles.infoContainer} direction={"column"} gap={20}>
             <Select
               options={petOptions}
               onChange={handleSelectPet}
               value={petOption}
             />
-            <Flex justifyContent={"space-around"}>
-              <Typography size={20}>
-                Edat: {pet !== undefined ? pet.age : null}
-              </Typography>
-              <Typography size={20}>
-                Gènere: {pet !== undefined ? pet.sex : null}
-              </Typography>
-            </Flex>
-            {selectedDateData !== undefined ? (
-              <Flex direction={"column"} gap={20}>
-                <Typography size={20}>
-                  Aliment: {selectedDateData.food}
+            <Flex justifyContent={"space-around"} className={styles.extraInfo}>
+              <Flex gap={15} alignItems={"center"}>
+                <Typography size={16} fontFamily={"Lora"} bold>
+                  Edat
                 </Typography>
-                <Typography size={20}>
-                  Excrements: {selectedDateData.poop}
-                </Typography>
-                <Typography size={20}>
-                  Comportament: {selectedDateData.behavior}
-                </Typography>
-                <Typography size={20}>
-                  Vòmits: {selectedDateData.puke ? "Si" : "No"}
+                <Typography size={18} fontFamily={"Lora"}>
+                  {pet !== undefined ? pet.age : null}
                 </Typography>
               </Flex>
+              <Flex gap={15} alignItems={"center"}>
+                <Typography size={16} fontFamily={"Lora"} bold>
+                  Gènere
+                </Typography>
+                <Typography size={18} fontFamily={"Lora"}>
+                  {pet !== undefined ? pet.sex : null}
+                </Typography>
+              </Flex>
+            </Flex>
+            {selectedDateData !== undefined ? (
+              <div className={styles.detailInfo}>
+                {selectedDateData.food ? (
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Aliment
+                    </Typography>
+                    <DetailPetData
+                      name={selectedDateData.food}
+                      imageName={
+                        selectedDateData.food === "normal" ||
+                        selectedDateData.food === "res"
+                          ? `${selectedDateData.food}Food`
+                          : selectedDateData.food
+                      }
+                    />
+                  </Flex>
+                ) : null}
+                {selectedDateData.poop ? (
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Excrements
+                    </Typography>
+                    <DetailPetData
+                      name={selectedDateData.poop}
+                      imageName={
+                        selectedDateData.poop === "normal" ||
+                        selectedDateData.poop === "res"
+                          ? `${selectedDateData.poop}Poop`
+                          : selectedDateData.poop
+                      }
+                    />
+                  </Flex>
+                ) : null}
+
+                {selectedDateData.behavior ? (
+                  <Flex direction={"column"} gap={10} alignItems={"center"}>
+                    <Typography fontFamily={"Lora"} size={20} bold>
+                      Behavior
+                    </Typography>
+                    <DetailPetData
+                      name={selectedDateData.behavior}
+                      imageName={
+                        selectedDateData.behavior === "normal"
+                          ? `${selectedDateData.behavior}Behavior`
+                          : selectedDateData.behavior
+                      }
+                    />
+                  </Flex>
+                ) : null}
+
+                <Flex direction={"column"} gap={10} alignItems={"center"}>
+                  <Typography fontFamily={"Lora"} size={20} bold>
+                    Vòmits
+                  </Typography>
+                  <DetailPetData
+                    name={selectedDateData.puke === true ? "Sí" : "No"}
+                    imageName={
+                      selectedDateData.puke === false ? "resPoop" : "puke"
+                    }
+                  />
+                </Flex>
+              </div>
             ) : (
               "No hi ha informació"
             )}
@@ -175,7 +243,9 @@ const ConsultData = () => {
                   variant={"main2"}
                   textSize={"card"}
                   onClick={() => {
-                    navigate(`/petData/${pet.id}`, { state: selectedDate });
+                    navigate(`/petData/${pet.id}`, {
+                      state: { selectedDate, petName: pet.name },
+                    });
                   }}
                 >
                   Afegir

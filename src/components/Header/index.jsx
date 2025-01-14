@@ -2,7 +2,7 @@ import Flex from "../Flex";
 import Typography from "../Typography";
 import Button from "../Button";
 import styles from "./index.module.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../../contexts/authContext";
 import { signOut } from "../../firebase/auth";
 import { useMediaQuery } from "react-responsive";
@@ -49,14 +49,16 @@ const Header = ({}) => {
           )}
         </Button>
       )}
-      <Typography
-        fontFamily={"Praise"}
-        size={isMobile ? 55 : 96}
-        color={"white"}
-        className={styles.logo}
-      >
-        PetCare
-      </Typography>
+      <Link to="/">
+        <Typography
+          fontFamily={"Praise"}
+          size={isMobile ? 55 : 96}
+          color={"white"}
+          className={styles.logo}
+        >
+          PetCare
+        </Typography>
+      </Link>
       {userLoggedIn ? (
         <Button
           variant={"nav"}

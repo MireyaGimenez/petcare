@@ -21,6 +21,7 @@ const AddPets = ({}) => {
   const [age, setAge] = useState();
   const [breed, setBreed] = useState();
   const [sex, setSex] = useState("Mascle");
+  const [error, setError] = useState({ name: "", age: "", breed: "" });
 
   const handleChange = (value) => {
     setSelectedValue(value);
@@ -32,7 +33,13 @@ const AddPets = ({}) => {
         navigate("/pets");
       })
       .catch((error) => {
-        console.error("Error adding pet:", error);
+        if (error.message.includes("Unsupported field value: undefined")) {
+          setError({
+            name: name === undefined ? "Omple aquest camp" : "",
+            age: age === undefined ? "Omple aquest camp" : "",
+            breed: breed === undefined ? "Omple aquest camp" : "",
+          });
+        }
       });
   };
 
@@ -53,6 +60,8 @@ const AddPets = ({}) => {
               id={"nom"}
               position="horizontal"
               onChange={(e) => setName(e.target.value)}
+              required
+              error={error.name}
             />
             <TextInput
               label={"Edat"}
@@ -60,6 +69,8 @@ const AddPets = ({}) => {
               position="horizontal"
               onChange={(e) => setAge(e.target.value)}
               type={"number"}
+              required
+              error={error.age}
             />
           </Flex>
           <Flex
@@ -72,6 +83,8 @@ const AddPets = ({}) => {
               id={"raça"}
               position="horizontal"
               onChange={(e) => setBreed(e.target.value)}
+              required
+              error={error.breed}
             />
             <Select
               options={["Mascle", "Femella"]}
@@ -89,6 +102,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "cat"}
               value={"cat"}
+              imageName={"cat"}
             />
             <Radius
               id={"dog"}
@@ -96,6 +110,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "dog"}
               value={"dog"}
+              imageName={"dog"}
             />
             <Radius
               id={"bunny"}
@@ -103,6 +118,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "bunny"}
               value={"bunny"}
+              imageName={"bunny"}
             />
             <Radius
               id={"rat"}
@@ -110,6 +126,7 @@ const AddPets = ({}) => {
               onChange={handleChange}
               checked={selectedValue === "rat"}
               value={"rat"}
+              imageName={"rat"}
             />
           </Flex>
           <Button variant={"main"} onClick={handleSubmit}>

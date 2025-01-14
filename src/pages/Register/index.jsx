@@ -13,6 +13,7 @@ const Register = ({}) => {
   const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState({ email: "", password: "" });
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
@@ -23,8 +24,16 @@ const Register = ({}) => {
     setPassword(e.target.value);
   };
   const handleSubmit = async () => {
-    await createUser(email, password);
-    navigate("/pets");
+    await createUser(email, password)
+      .then(() => navigate("/pets"))
+      .catch((error) => {
+        if (error.message.includes("email")) {
+          setError({ email: error.message, password: "" });
+        }
+        if (error.message.includes("password")) {
+          setError({ email: "", password: error.message });
+        }
+      });
   };
 
   return (
@@ -48,13 +57,15 @@ const Register = ({}) => {
             placeholder={"Introdueix el teu email"}
             id={"email"}
             onChange={handleOnChangeEmail}
+            error={error.email}
           />
           <TextInput
             label={"Contrassenya:"}
-            placeholder={"Introdueix la teva contrassenya"}
+            placeholder={"Introdueix un mínim de 6 caràcters"}
             id={"password"}
             type={"password"}
             onChange={handleOnChangePassword}
+            error={error.password}
           />
           <Button variant={"main"} onClick={handleSubmit}>
             REGISTRAR

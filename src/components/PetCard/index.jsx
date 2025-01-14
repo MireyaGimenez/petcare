@@ -32,7 +32,7 @@ const PetCard = ({
         justifyContent={"center"}
       >
         <Flex>
-          <ImageDisplay imageName={image} type={"species"} />
+          <ImageDisplay imageName={image} type={"speciesCard"} />
         </Flex>
         <Flex direction={"column"} gap={isMobile ? 10 : 20}>
           <Typography size={isMobile ? 20 : 28} fontFamily={"Lora"} bold>

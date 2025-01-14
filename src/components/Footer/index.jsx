@@ -4,6 +4,7 @@ import Typography from "../Typography";
 import ImageDisplay from "../ImageDisplay";
 import SocialMedia from "../SocialMedia";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 
 const Footer = ({}) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -16,14 +17,16 @@ const Footer = ({}) => {
       gap={40}
     >
       <Flex>
-        <Typography
-          fontFamily={"Praise"}
-          size={isMobile ? 55 : 96}
-          color={"white"}
-          className={styles.logo}
-        >
-          PetCare
-        </Typography>
+        <Link to="/">
+          <Typography
+            fontFamily={"Praise"}
+            size={isMobile ? 55 : 96}
+            color={"white"}
+            className={styles.logo}
+          >
+            PetCare
+          </Typography>
+        </Link>
       </Flex>
       <Flex direction={"row"} gap={30} alignItems={"center"}>
         <Flex direction={isMobile ? "row" : "column"} gap={35}>
