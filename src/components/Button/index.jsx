@@ -22,7 +22,7 @@ const Button = ({ children, variant, textSize, className, onClick }) => {
           size={
             isMobile
               ? textSize === "card"
-                ? 16
+                ? 14
                 : 20
               : textSize === "card"
               ? 24

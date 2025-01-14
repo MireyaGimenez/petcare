@@ -72,7 +72,11 @@ const Footer = ({}) => {
           <ImageDisplay imageName={"contact"} type={"contact"} />
         </Flex>
       </Flex>
-      <Flex direction={isMobile ? "row" : "column"} gap={isMobile ? 0 : 30}>
+      <Flex
+        direction={isMobile ? "row" : "column"}
+        gap={isMobile ? 0 : 30}
+        className={styles.socialsIcons}
+      >
         {isMobile ? null : (
           <Typography
             fontFamily={"PT Serif"}

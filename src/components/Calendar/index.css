@@ -36,3 +36,13 @@
 .fc-daygrid-dot-event .fc-event-title {
   display: none;
 }
+
+.fc-toolbar-title,
+.fc-col-header-cell-cushion {
+  font-family: "Lora";
+  font-weight: bold;
+}
+
+.fc-daygrid-day-number {
+  font-family: "Lora";
+}
