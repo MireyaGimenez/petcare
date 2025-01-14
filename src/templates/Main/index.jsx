@@ -8,11 +8,11 @@ import { clsx } from "clsx";
 const Main = ({ children, hasImage, className }) => {
   return (
     <Flex className={styles.mainContainer} direction={"column"}>
-      <Flex className={styles.banner}>
-        {hasImage ? (
+      {hasImage ? (
+        <Flex className={styles.banner}>
           <ImageDisplay imageName={"banner"} type={"banner"} />
-        ) : null}
-      </Flex>
+        </Flex>
+      ) : null}
       <Flex direction={"column"} className={clsx(styles.mainBox, className)}>
         <Header />
         {children}

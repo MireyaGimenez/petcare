@@ -10,4 +10,11 @@
     padding: 30px;
     margin-top: 0px;
   }
+  .speciesContainer {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
