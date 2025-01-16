@@ -49,7 +49,12 @@ const Pets = () => {
               })
             : null}
         </div>
-        <Flex justifyContent={"space-around"}>
+        <Flex
+          justifyContent={"space-around"}
+          direction={isMobile ? "column" : "row"}
+          gap={isMobile ? 20 : 0}
+          alignItems={"center"}
+        >
           <Button variant={"main2"} onClick={() => navigate("/addPets")}>
             + AFEGIR
           </Button>
