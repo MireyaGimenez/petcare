@@ -15,3 +15,10 @@
 .logInTitle {
   align-self: center;
 }
+
+@media (max-width: 768px) {
+  .logInBox {
+    width: 75%;
+    padding: 20px;
+  }
+}
