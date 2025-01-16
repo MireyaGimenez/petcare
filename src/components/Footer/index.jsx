@@ -29,7 +29,7 @@ const Footer = ({}) => {
         </Link>
       </Flex>
       <Flex direction={"row"} gap={30} alignItems={"center"}>
-        <Flex direction={isMobile ? "row" : "column"} gap={35}>
+        <Flex direction={isMobile ? "row" : "column"} gap={isMobile ? 20 : 35}>
           <Flex direction={"column"} gap={15}>
             <Typography
               fontFamily={"PT Serif"}

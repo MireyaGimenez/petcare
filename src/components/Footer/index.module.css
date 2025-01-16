@@ -12,13 +12,12 @@
 @media (max-width: 768px) {
   .footerContainer {
     height: auto;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding: 30px 10px;
   }
   .textAddress {
     margin-top: 40px;
   }
   .socialsIcons {
-    padding-left: 30px;
+    padding-left: 50px;
   }
 }
