@@ -44,7 +44,7 @@ const PetCard = ({
           <Typography size={isMobile ? 20 : 28} fontFamily={"Lora"}>
             {petAge}
           </Typography>
-          <Flex gap={isMobile ? 10 : 20}>
+          <Flex gap={isMobile ? 8 : 20}>
             <Button
               variant={"main"}
               textSize={"card"}

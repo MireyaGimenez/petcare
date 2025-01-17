@@ -16,5 +16,6 @@
   .petCardContainer {
     width: 290px;
     height: 170px;
+    padding: 10px;
   }
 }

@@ -11,17 +11,10 @@
 
 @media (max-width: 768px) {
   .petContainer {
-    padding: 40px;
+    padding: 30px;
   }
   .petGrid {
     grid-template-columns: repeat(1, 1fr);
     justify-items: left !important;
-  }
-}
-
-@media (max-width: 1450px) {
-  .petGrid {
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: center;
   }
 }

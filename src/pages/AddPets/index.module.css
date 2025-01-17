@@ -6,9 +6,10 @@
 }
 
 @media (max-width: 768px) {
-  .petContaaddPetsContaineriner {
+  .addPetsContainer {
     padding: 30px;
     margin-top: 0px;
+    margin-bottom: 10px;
   }
   .speciesContainer {
     width: 100%;
